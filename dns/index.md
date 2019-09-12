@@ -1,3 +1,3 @@
 # DNS
 
-[PowerDNS](./pdns/)
+- [PowerDNS](./pdns/)

@@ -1,2 +1,2 @@
 # PowerDNS
-[only-notify](./only-notify)
+- [only-notify](./only-notify)

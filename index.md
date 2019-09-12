@@ -1,3 +1,3 @@
 # kimitoboku memo page
-[DNS](./dns)
+- [DNS](./dns)
 
