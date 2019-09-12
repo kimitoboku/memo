@@ -1,3 +1,3 @@
-# kimitoboku Wiki page
+# kimitoboku memo page
 [DNS](./dns)
 
