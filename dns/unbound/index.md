@@ -1,2 +1,2 @@
 # Unbound
-- [outgoing-range](./outgoing-range/)
+- [outgoing-range](./outgoing-range)
