@@ -36,7 +36,7 @@ In [20]: print(dns.rdataset.from_text(dns.rdataclass.IN, dns.rdatatype.TXT, 0, f
 続いて， `;` が入っているTXTレコードの問題です．
 これはdnspythonが `;` を区切り文字の1つとして認識してるために発生する問題です．
 具体的には， `；` を入力したい場合は以下のように `""` で囲わないと，末尾と認識されてその前のテキストまでがrdataとなります．
-```
+```python
 In [21]: print(dns.rdataset.from_text(dns.rdataclass.IN, dns.rdatatype.TXT, 0, 'aaa; bbb'))
 0 IN TXT "aaa"
 
@@ -45,13 +45,13 @@ In [22]: print(dns.rdataset.from_text(dns.rdataclass.IN, dns.rdatatype.TXT, 0, '
 
 ```
 また，少し面白い挙動だと，ミスで2回 `""` で括った場合には，括ってない場合と同様の挙動にもなります，
-```
+```python
 In [25]: print(dns.rdataset.from_text(dns.rdataclass.IN, dns.rdatatype.TXT, 0, '""aaa; bbb""'))
 0 IN TXT "" "aaa"
 ```
 
 ということで，DKIMをdnspythonで追加したい場合は，以下のように指定しましょう．
-```
+```python
 In [26]: print(dns.rdataset.from_text(dns.rdataclass.IN, dns.rdatatype.TXT, 0, '"v=DKIM1;k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDwDc+AabcditzcdHYwOooW7HmqsPFzZUUb1nNqMj7ozyv/Q0WwwGJ+bdS4a9tO9roiT+VyyyMfIBoTdMNEWoXUMHafPgkOFPl5YO52pZM40bdXY/qtfT2nglJqS53zFFqB36q" "HoN9lgPRwP/e+ScCPlwHkcfIwD58ISU/lC5Bx+wIDAQAB"'))
 0 IN TXT "v=DKIM1;k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDwDc+AabcditzcdHYwOooW7HmqsPFzZUUb1nNqMj7ozyv/Q0WwwGJ+bdS4a9tO9roiT+VyyyMfIBoTdMNEWoXUMHafPgkOFPl5YO52pZM40bdXY/qtfT2nglJqS53zFFqB36q" "HoN9lgPRwP/e+ScCPlwHkcfIwD58ISU/lC5Bx+wIDAQAB"
 ```

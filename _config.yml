@@ -5,5 +5,6 @@ logo: ./img/c3764192d3079398321efb22ccb65c35.jpg
 markdown: kramdown
 plugins:
   - jekyll-org
+  - jekyll-sitemap
 google_analytics: UA-21221719-3
 
