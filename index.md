@@ -12,6 +12,7 @@
 - [tcpdump](./tools/tcpdump)
 - [SystemTap](./tools/systemtap-dtrace-probe)
 - [sipcalc](./tools/sipcalc)
+- [ansible](./tools/ansible)
 
 ## My Tools
 - [gelworm](./my_tools/gelworm)
