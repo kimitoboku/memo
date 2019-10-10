@@ -13,6 +13,7 @@
 - [SystemTap](./tools/systemtap-dtrace-probe)
 - [sipcalc](./tools/sipcalc)
 - [ansible](./tools/ansible)
+- [chattr](./tools/chattr)
 
 ## My Tools
 - [gelworm](./my_tools/gelworm)
