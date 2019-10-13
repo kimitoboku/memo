@@ -14,5 +14,5 @@ $ openstack port show {port id}
 
 まとめるとこんな感じ
 ```
-$ openstack port show $(openstack port list --fixed-ip ip-address=10.231.226.216 -f value -c ID)
+$ openstack port show $(openstack port list --fixed-ip ip-address=192.1.2.1 -f value -c ID)
 ```
