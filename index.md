@@ -8,6 +8,7 @@
 - [openSUSE](./opensuse)
 - [SystemTap](./linux/systemtap-dtrace-probe)
 - [chattr](./linux/chattr)
+- [sysctl](./linux/sysctl)
 
 ## Tools
 - [tmux](./tools/tmux)
