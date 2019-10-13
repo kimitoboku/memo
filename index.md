@@ -4,16 +4,16 @@
 ## Language
 - [Python](./python)
 
-## other
+## Linux
 - [openSUSE](./opensuse)
+- [SystemTap](./linux/systemtap-dtrace-probe)
+- [chattr](./linux/chattr)
 
 ## Tools
 - [tmux](./tools/tmux)
 - [tcpdump](./tools/tcpdump)
-- [SystemTap](./tools/systemtap-dtrace-probe)
 - [sipcalc](./tools/sipcalc)
 - [ansible](./tools/ansible)
-- [chattr](./tools/chattr)
 - [openstack](./tools/openstack)
 
 
