@@ -9,7 +9,7 @@
 - [SystemTap](./linux/systemtap-dtrace-probe)
 - [chattr](./linux/chattr)
 - [sysctl](./linux/sysctl)
-- [/sys/kernel/debug](./linux/ sys-kernel-debug)
+- [/sys/kernel/debug](./linux/sys-kernel-debug)
 
 ## Tools
 - [tmux](./tools/tmux)
