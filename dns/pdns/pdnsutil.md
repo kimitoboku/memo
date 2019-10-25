@@ -81,3 +81,4 @@ MariaDB [pdns]> select * from domainmetadata;
 ```
 となり，便利にSlaveを管理する事が出来る．
 AnsibleなどでSlaveを管理したい場合は，MySQLを直接扱うよりも，pdnsutilコマンドを実行した方が安全．
+また，存在しないゾーンに対して， `pdnsutil` コマンドを使用しても，データベースに登録されないだけなので，たいした問題はない．
