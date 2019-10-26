@@ -1,4 +1,4 @@
-# OpenStack
+# openstack
 
 OpenStackのCLIのやつ．
 OpenStack自体はToolじゃない所に書くがそのうちやいのやいのする．
@@ -42,7 +42,7 @@ export LOCAL_OS_TOKEN=$(openstack token issue --format value --column id)
 alias curl='curl -H "X-Auth-Token: $LOCAL_OS_TOKEN"'
 
 _OLD_VIRTUAL_PS1="${PS1:-}"
-export PS1="(personal-verda) ${PS1:-}"
+export PS1="(OS $OS_REGION_NAME) ${PS1:-}"
 
 deactivate_openstack () {
     if [ -n "${_OLD_VIRTUAL_PS1:-}" ] ; then
