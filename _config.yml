@@ -8,3 +8,12 @@ plugins:
   - jekyll-sitemap
 google_analytics: UA-21221719-3
 
+social_links:
+  twitter: Kawakami_Kento
+  github: kimitoboku
+  keybase: kimitoboku
+  linkedin: kimitoboku
+  mastodon:
+    - username: kimitoboku
+      instance: fla.red
+
