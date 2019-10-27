@@ -1,4 +1,8 @@
-# DesignateのデフォルトのRefreshの値について
+---
+layout: post
+title: DesignateのデフォルトのRefreshの値について 
+---
+
 Designateでは，ゾーンの作成時に設定ファイルに指定されたデフォルトの値によって，RefreshやRetryやNegative TTLなどを決定する．
 例えば， `designate.conf` で， `default_soa_minimum` を設定することでゾーン作成時に，Negative TTLがこの値に設定される．
 ```

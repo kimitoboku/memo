@@ -1,4 +1,8 @@
-# pdnsutil
+---
+layout: post
+title: pdnsutil
+---
+
 PowerDNSの状態やゾーンを管理するコマンド．
 動作としては，PowerDNSのバックエンドのデータベースの操作を行う．
 `pdns_control` はPowerDNSにコマンドを送信するための物なので用途が違う．

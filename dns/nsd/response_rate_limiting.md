@@ -1,4 +1,8 @@
-# Response Rate Limiting
+---
+layout: post
+title: Response Rate Limiting
+---
+
 NSDはデフォルトでReponse Rate Limiting (RRL) がONになっている。
 RRLは、DNSコンテンツサーバがDNS amp攻撃の踏み台とならないために存在する機能である。
 DNS amp攻撃は、UDPパケットの送信元IPアドレスを攻撃対象のIPアドレスにし、DNSのレスポンスを攻撃対象に向ける攻撃手法である。

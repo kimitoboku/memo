@@ -1,4 +1,8 @@
-# only-notify
+---
+layout: post
+title: only-notify
+---
+
 PowerDNSはゾーンのタイプがMASTERであった場合に，NSレコードに登録されているホストに対して自動でNOTIFYを送信する．
 only-nofityは自動的に送信するIPアドレスのレンジを設定する．
 
