@@ -1,4 +1,8 @@
-# outgoing-range
+---
+layout: post
+title: outgoing-range
+---
+
 `outgoing-range` はunboundにおいて、1つのスレッドあたりにオープンするポートの数、すなわち、1つのスレッドが同時に処理出来る名前解決の数を表している。
 可能な限り、最大の値にしておいた方がよい。
 つまり、 `最大ファイルディスクリプタの数　/ core数` を指定するのが良い。

@@ -1,4 +1,8 @@
-# dnspythonで255文字を超えたりするTXTレコード(DKIM)を扱う場合の注意点
+---
+layout: post
+title: dnspythonで255文字を超えたりするTXTレコード(DKIM)を扱う場合の注意点
+---
+
 [dnspython](http://www.dnspython.org/)はPythonでDNSを扱う上で，もっともよく使用されているライブラリだと思います．
 普通にクエリを投げたりする場合には，特に問題にはならないのですが，dnspythonを用いてコンテンツサーバを作成する場合などに，一部，ひっかかってしまうような挙動があります．
 今回実験したdnspythonのバージョンは以下の通りです．

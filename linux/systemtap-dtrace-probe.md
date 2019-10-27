@@ -1,5 +1,7 @@
-# SystemTapでDtraceのプローブが入ったソースコードをコンパイル
-
+---
+layout: post
+title: SystemTapでDtraceのプローブが入ったソースコードをコンパイル
+---
 dtraceのプローブが付いたプログラムをLinuxでビルドするにはSystemTapを用いる。
 以下のようなdtrace向けのプログラムを用意する。
 ```c

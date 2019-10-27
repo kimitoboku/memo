@@ -1,4 +1,6 @@
-# tmux
+---
+layout: post
+---
 
 自分のtmux環境のメモ
 

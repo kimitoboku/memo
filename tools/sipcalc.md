@@ -1,4 +1,7 @@
-# sipcalc
+---
+layout: post
+---
+
 IPアドレスのsubnetのレンジなどを計算出来るコマンド
 
 インストール

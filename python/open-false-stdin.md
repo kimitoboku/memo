@@ -1,4 +1,7 @@
-# Pythonでopen関数の引数にFalseが渡ったの動作
+---
+layout: post
+title: Pythonでopen関数の引数にFalseが渡ったの動作
+---
 
 Pythonには組み込み関数でファイルを開くopen関数が存在する．
 open関数は以下のような引数をもつ．

@@ -1,4 +1,8 @@
-# `/sys/kernel/debug`
+---
+layout: post
+title: `/sys/kernel/debug`
+---
+
 Linuxカーネル内部のデバッグに関わる情報を参照するための物．
 以下のようにマウントする．
 

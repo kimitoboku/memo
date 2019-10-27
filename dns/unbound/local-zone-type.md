@@ -1,4 +1,7 @@
-# local-zoneのtypeについて
+---
+layout: post
+title: local-zoneのtypeについて
+---
 
 unboundではローカルで解決したい名前に `local-zonez` という機能を用いて名前解決を行うことが出来ます。(権威サーバ機能もありますが忘れたことにしたいので忘れます)
 `local-zone` にはゾーンと共にゾーンにデータが存在しなかった場合の挙動を決定する `type` を指定します。

@@ -1,4 +1,6 @@
-# openstack
+---
+layout: post
+---
 
 OpenStackのCLIのやつ．
 OpenStack自体はToolじゃない所に書くがそのうちやいのやいのする．
