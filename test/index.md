@@ -1,5 +1,6 @@
 ---
 title: This is test page
+layout: post
 mathjax: true
 encoding: UTF-8
 ---
