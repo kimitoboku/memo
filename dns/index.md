@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 # DNS
 
 - [PowerDNS](./pdns/)
