@@ -1,6 +1,6 @@
 ---
 layout: post
-title: `/sys/kernel/debug`
+title: /sys/kernel/debug
 ---
 
 Linuxカーネル内部のデバッグに関わる情報を参照するための物．
