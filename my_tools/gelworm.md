@@ -1,9 +1,8 @@
 ---
 layout: post
+title: gelworm
 ---
 
-
-# gelworm
 問い合わせてきたリゾルバのIPアドレスを返すDNSサーバ
 DNSをロードバランスしてる時に、正しく分散されているか確認するために使う。
 

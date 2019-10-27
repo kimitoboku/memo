@@ -1,5 +1,6 @@
 ---
 layout: post
+title: tmux
 ---
 
 自分のtmux環境のメモ

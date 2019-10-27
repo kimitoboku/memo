@@ -1,5 +1,6 @@
 ---
 layout: post
+title: sipcalc
 ---
 
 IPアドレスのsubnetのレンジなどを計算出来るコマンド

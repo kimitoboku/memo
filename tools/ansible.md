@@ -1,5 +1,6 @@
 ---
 layout: post
+title: ansible
 ---
 
 よく使われる構成管理ツール

@@ -1,9 +1,8 @@
 ---
 layout: post
+title: eleking
 ---
 
-
-# eleking
 [tldr](https://github.com/tldr-pages/tldr) をターミナルで表示するためのツール。
 オフラインで実行出来るツールが当時無かったので作った。
 
