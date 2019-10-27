@@ -15,7 +15,7 @@ layout: default
         {%- endif -%}</p>
     {% include mathjax.html %}
   </header>
-  {% include toc.html html=content %}
+  {% include toc.html html=content sanitize=true %}
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
