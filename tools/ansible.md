@@ -42,8 +42,6 @@ $ tree .
 
 libraryの下でAnsibleModuleクラスを用いて，プログラムを作成する．
 ```
-from ansible.module_utils.basic import AnsibleModule
-
 def main():
     module = AnsibleModule(
         argument_spec=dict(
@@ -65,10 +63,9 @@ def main():
         module.fail_json(msg=f"Hogehoge is not true")
     module.exit_json(changed=True)
 
+from ansible.module_utils.basic import AnsibleModule
 if __name__ == "__main__":
     main()
-
-
 ```
 これは，とくに何もないCustom Moduleだが，だいたいの使いかたはこれで分かると思う．
 これを呼び出すば場合は以下のようにPlaybookで書く．
@@ -83,3 +80,10 @@ if __name__ == "__main__":
     zone: exmaple.com.
     hogehoge: False
 ```
+また，このモジュールではAnsibleのModuleの `import` を `main` 関数の直前で行なっている．
+```
+from ansible.module_utils.basic import AnsibleModule
+if __name__ == "__main__":
+    main()
+```
+これは，AnsbileのCustoom Moduleはこの `import` 含めてサーバに持っていく時は，1つのファイルに埋め込まれて実行されるらしく，実際に実行する部分よりも上にあると，エラーなどの行番号がずれて，デバッグなどが行いにくくなるためらしい．
