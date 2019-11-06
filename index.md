@@ -22,6 +22,7 @@ title: Home
 - [sipcalc](./tools/sipcalc)
 - [ansible](./tools/ansible)
 - [openstack](./tools/openstack)
+- [mysql](./tools/mysql)
 
 
 ## My Tools
