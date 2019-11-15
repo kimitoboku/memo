@@ -15,6 +15,7 @@ title: Home
 - [chattr](./linux/chattr)
 - [sysctl](./linux/sysctl)
 - [/sys/kernel/debug](./linux/sys-kernel-debug)
+- [one liners](./linux/one-liner)
 
 ## Tools
 - [tmux](./tools/tmux)
