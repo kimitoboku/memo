@@ -108,7 +108,7 @@ class ExceptionB(Exception):
     pass
 
 
-@retry(exceptions=(ExceptionA), tries=3， delay=1)
+@retry(exceptions=(ExceptionA), tries=3, delay=1)
 def retry_func():
     if random.random() > 0.5:
         raise ExceptionA
