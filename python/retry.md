@@ -161,5 +161,35 @@ if __name__ = "__main__":
 ```
 関数の中で関数作れば良いよ，
 
+デコレータじゃなくて， `retry_call` という関数を使う方法もある．
+```python
+import random
+
+from retry.api import retry_call
+
+class ExceptionA(Exception):
+    pass
+
+class ExceptionB(Exception):
+    pass
+
+
+def retry_func(retry_num, delay_time):
+    def retry_func():
+        if random.random() > 0.5:
+            raise ExceptionA
+        elif random.random() > 0.3:
+            raise ExceptionA
+        else:
+            retrun
+
+    return retry_call(retry_func, fargs=[], fkwargs={}, exceptions=(ExceptionA), tries=retry_num, delay=delay_time)
+
+
+if __name__ = "__main__":
+    retry_func()
+```
+こっちは，適当な関数をリトライする関数に出来るのでライブラリとか使う時に便利そう．
+
 
 [^1]: [retry · PyPI](https://pypi.org/project/retry/)
