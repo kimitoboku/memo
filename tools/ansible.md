@@ -107,3 +107,27 @@ Ansibleを書いてて， `shell` とかを使う時に実行するスクリプ�
 日本語で調べても地味にこれだけっていう情報が見付からなかった．
 registerに入ってる値は以下のページで確認出来る．
 - [Return Values — Ansible Documentation](https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common)
+
+
+# Custom Factsについて
+Ansibleはホスト毎にユーザが保存した情報などを `Custom Facts` として，サーバマシンなどに保存し，次回の，Playbookの実行時にその値を読みだす機能がある．
+`/etc/ansible/facts.d` に `json` 形式か `ini` 形式かを選択出来る．
+構造化して使用したい場合には `json` しか選択肢がない．
+`template` で `json` 生成するの辛い．
+以下のようにPlaybookでディレクトリの作成と配置をする．
+```yaml
+- name: Create custom fact directory
+  file:
+    path: /etc/ansible/facts.d
+    state: directory
+
+- name: Set hoge fact
+  template:
+    src: hoge_data.fact.j2
+    dest: "/etc/ansible/facts.d/hoge_data.fact"
+```
+多分しないとは思うけど(自分はしたんだけど)このfactファイルのパーミッションを下手にいじるとフォーマットエラーと言ってgathering facts中に落ちるので厳しい．
+もっと，適当に答えて欲しい．
+
+次回の実行からCustom Factsの中身は， `ansible_local` という変数から呼び出す事が出来るようになる．
+今回の場合は `ansible_local.hoge_data` 以下に `json` の `Key-Value` で入ってるのでよしなに使えばよい．
