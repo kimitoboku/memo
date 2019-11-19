@@ -87,3 +87,23 @@ if __name__ == "__main__":
     main()
 ```
 これは，AnsbileのCustoom Moduleはこの `import` 含めてサーバに持っていく時は，1つのファイルに埋め込まれて実行されるらしく，実際に実行する部分よりも上にあると，エラーなどの行番号がずれて，デバッグなどが行いにくくなるためらしい．
+
+
+# 先に実行されたタスクの実行結果がchangedの時にのみ実行する
+Ansibleを書いてて， `shell` とかを使う時に実行するスクリプトファイルとかを `template` で生成した場合に，変更があった時だけ実行したいといった事が考えられる．
+そのような場合には， `register` と `when` を使って実行結果を確認する．
+```yaml
+- name: Set hoge commands
+  template:
+    src: hoge.sh.j2
+    dest: /tmp/hoge.sh
+    mode: 0755
+  register: hoge_scrpit
+
+- name: Run hoge command
+  shell: /tmp/hoge.sh
+  when: hoge_script.changed
+```
+日本語で調べても地味にこれだけっていう情報が見付からなかった．
+registerに入ってる値は以下のページで確認出来る．
+- [Return Values — Ansible Documentation](https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common)
