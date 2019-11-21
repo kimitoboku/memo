@@ -16,6 +16,7 @@ title: Home
 - [sysctl](./linux/sysctl)
 - [/sys/kernel/debug](./linux/sys-kernel-debug)
 - [one liners](./linux/one-liner)
+- [/etc](./linux/etc)
 
 ## Tools
 - [tmux](./tools/tmux)
