@@ -5,3 +5,4 @@ title: PowerDNS
 
 - [only-notify](./only-notify)
 - [pdnsutil](./pdnsutil)
+- [Aliasレコードについて](./alias)
