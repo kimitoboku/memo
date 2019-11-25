@@ -17,6 +17,7 @@ title: Home
 - [/sys/kernel/debug](./linux/sys-kernel-debug)
 - [one liners](./linux/one-liner)
 - [/etc](./linux/etc)
+- [bpftrace](./linux/bpftrace)
 
 ## Tools
 - [tmux](./tools/tmux)
