@@ -89,6 +89,35 @@ if __name__ == "__main__":
 これは，AnsbileのCustoom Moduleはこの `import` 含めてサーバに持っていく時は，1つのファイルに埋め込まれて実行されるらしく，実際に実行する部分よりも上にあると，エラーなどの行番号がずれて，デバッグなどが行いにくくなるためらしい．
 
 
+また，Custom Moduleでssh先のファイル操作などを行いたい場合もこの中で，普通にファイルの操作を行えばよい．
+```
+import json
+
+def main():
+    module = AnsibleModule(
+        argument_spec=dict(
+            dns=dict(required=True),
+            zone=dict(required=True, type='dict'),
+            config_path=dict(required=True, type='str')
+        ),
+        supports_check_mode=True
+    )
+
+    dns = module.params['dns']
+    zone_config = module.params['zone']
+    config_path = module.params['config_path']
+
+    with open(config_path, 'w') as f:
+        f.write(json.dumps(zone_config))
+    module.exit_json(changed=True)
+
+from ansible.module_utils.basic import AnsibleModule
+if __name__ == "__main__":
+    main()
+```
+Custom Moduleは基本的にターケットとなった環境で実行されるのでライブラリの確認とかは十全にやらないといけない．
+
+
 # 先に実行されたタスクの実行結果がchangedの時にのみ実行する
 Ansibleを書いてて， `shell` とかを使う時に実行するスクリプトファイルとかを `template` で生成した場合に，変更があった時だけ実行したいといった事が考えられる．
 そのような場合には， `register` と `when` を使って実行結果を確認する．
