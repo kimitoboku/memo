@@ -66,3 +66,8 @@ deactivate_openstack () {
     unset deactivate_openstack
 }
 ```
+
+## DesignateのDomain APEXにレコードを追加
+```
+openstack recordset create --type A --record '192.0.2.1' example.com. example.com.
+```
