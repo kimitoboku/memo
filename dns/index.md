@@ -3,6 +3,7 @@ layout: post
 title: DNS
 ---
 
+- [DNS](./dns/)
 - [PowerDNS](./pdns/)
 - [Designate](./designate/)
 - [NSD](./nsd/)
