@@ -160,3 +160,14 @@ Ansibleはホスト毎にユーザが保存した情報などを `Custom Facts` 
 
 次回の実行からCustom Factsの中身は， `ansible_local` という変数から呼び出す事が出来るようになる．
 今回の場合は `ansible_local.hoge_data` 以下に `json` の `Key-Value` で入ってるのでよしなに使えばよい．
+
+
+# when と with_dict を同時に使う
+条件分岐をしつつ，ループを実行出来る．
+具体的には， `with_dict` が先に実行されて， `with_dict` のループの中で `when` が動くような感じ．
+```
+- debug:
+    msg: "{{ item.key }}"
+  with_dict:
+  when: item.key == "hoge"
+```
