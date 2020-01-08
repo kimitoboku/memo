@@ -14,6 +14,7 @@ title: Home
 - [SystemTap](./linux/systemtap-dtrace-probe)
 - [chattr](./linux/chattr)
 - [sysctl](./linux/sysctl)
+- [rpm](./linux/rpm)
 - [/sys/kernel/debug](./linux/sys-kernel-debug)
 - [one liners](./linux/one-liner)
 - [/etc](./linux/etc)
