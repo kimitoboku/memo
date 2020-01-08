@@ -17,8 +17,8 @@ PowerDNSのデータベース系のバックエンドでは `domainmetadata` と
 
 `pdnsutil` コマンドを用いて以下のように設定を行うことが出来る．
 ```console
-$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1/32
-$ pdnsutil set-meta example.com. ALSO-NOTIFY 1.1.1.1/32
+$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1
+$ pdnsutil set-meta example.com. ALSO-NOTIFY 1.1.1.1
 ```
 これらのコマンドを実行すると， `domainmetadata` には以下のようにデータが登録される．
 ```
@@ -34,8 +34,8 @@ MariaDB [pdns]> select * from domainmetadata;
 +----|-----------|-----------------|------------+
 | id | domain_id | kind            | content    |
 +----|-----------|-----------------|------------+
-|  8 |         9 | ALLOW-AXFR-FROM | 1.1.1.1/32 |
-|  9 |         9 | ALSO-NOTIFY     | 1.1.1.1/32 |
+|  8 |         9 | ALLOW-AXFR-FROM | 1.1.1.1    |
+|  9 |         9 | ALSO-NOTIFY     | 1.1.1.1    |
 +----|-----------|-----------------|------------+
 2 rows in set (0.00 sec)
 
@@ -44,8 +44,8 @@ MariaDB [pdns]> select * from domainmetadata;
 
 `pdnsutil` は複数の値を登録する事も出来る．
 ```console
-$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1/32 2.2.2.2/32 3.3.3.3/32
-$ pdnsutil set-meta example.com. ALSO-NOTIFY  1.1.1.1/32 2.2.2.2/32 3.3.3.3/32
+$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1 2.2.2.2 3.3.3.3
+$ pdnsutil set-meta example.com. ALSO-NOTIFY  1.1.1.1 2.2.2.2 3.3.3.3
 ```
 これらのコマンドを実行すると，データベースは以下のようになる
 ```
@@ -53,12 +53,12 @@ MariaDB [pdns]> select * from domainmetadata;
 +----|-----------|-----------------|------------+
 | id | domain_id | kind            | content    |
 +----|-----------|-----------------|------------+
-| 10 |         9 | ALLOW-AXFR-FROM | 1.1.1.1/32 |
-| 11 |         9 | ALLOW-AXFR-FROM | 2.2.2.2/32 |
-| 12 |         9 | ALLOW-AXFR-FROM | 3.3.3.3/32 |
-| 13 |         9 | ALSO-NOTIFY     | 1.1.1.1/32 |
-| 14 |         9 | ALSO-NOTIFY     | 2.2.2.2/32 |
-| 15 |         9 | ALSO-NOTIFY     | 3.3.3.3/32 |
+| 10 |         9 | ALLOW-AXFR-FROM | 1.1.1.1    |
+| 11 |         9 | ALLOW-AXFR-FROM | 2.2.2.2    |
+| 12 |         9 | ALLOW-AXFR-FROM | 3.3.3.3    |
+| 13 |         9 | ALSO-NOTIFY     | 1.1.1.1    |
+| 14 |         9 | ALSO-NOTIFY     | 2.2.2.2    |
+| 15 |         9 | ALSO-NOTIFY     | 3.3.3.3    |
 +----|-----------|-----------------|------------+
 6 rows in set (0.00 sec)
 ```
@@ -67,8 +67,8 @@ MariaDB [pdns]> select * from domainmetadata;
 また， `pdnsutil` は，実行の羃等性が担保されているので，現状，3つのSlaveがある状態で，Slaveの個数を2つに減らすようにコマンドを実行した場合には正しくデータベースの削除も行なってくれる．
 以下のコマンドを実行する
 ```console
-$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1/32 3.3.3.3/32
-$ pdnsutil set-meta example.com. ALSO-NOTIFY  1.1.1.1/32 3.3.3.3/32
+$ pdnsutil set-meta example.com. ALLOW-AXFR-FROM 1.1.1.1 3.3.3.3
+$ pdnsutil set-meta example.com. ALSO-NOTIFY  1.1.1.1 3.3.3.3
 ```
 データベースは以下のようになる．
 ```
@@ -76,10 +76,10 @@ MariaDB [pdns]> select * from domainmetadata;
 +----|-----------|-----------------|------------+
 | id | domain_id | kind            | content    |
 +----|-----------|-----------------|------------+
-| 16 |         9 | ALLOW-AXFR-FROM | 1.1.1.1/32 |
-| 17 |         9 | ALLOW-AXFR-FROM | 3.3.3.3/32 |
-| 18 |         9 | ALSO-NOTIFY     | 1.1.1.1/32 |
-| 19 |         9 | ALSO-NOTIFY     | 3.3.3.3/32 |
+| 16 |         9 | ALLOW-AXFR-FROM | 1.1.1.1    |
+| 17 |         9 | ALLOW-AXFR-FROM | 3.3.3.3    |
+| 18 |         9 | ALSO-NOTIFY     | 1.1.1.1    |
+| 19 |         9 | ALSO-NOTIFY     | 3.3.3.3    |
 +----|-----------|-----------------|------------+
 4 rows in set (0.01 sec)
 ```

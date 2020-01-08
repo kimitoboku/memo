@@ -163,6 +163,7 @@ Ansibleはホスト毎にユーザが保存した情報などを `Custom Facts` 
 
 
 # when と with_dict を同時に使う
+
 条件分岐をしつつ，ループを実行出来る．
 具体的には， `with_dict` が先に実行されて， `with_dict` のループの中で `when` が動くような感じ．
 ```
