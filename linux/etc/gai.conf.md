@@ -4,7 +4,9 @@ title: /etc/gai.conf
 ---
 
 LinuxでIPアドレスの優先度を設定するやつ．
+GetAddressInfoの略でgaiらしいよ
 Debianだと `/etc/gai.conf` に以下のように書かれてる．
+無ければ作ればglibcが見に行ってくれそう
 ```
 #precedence  ::1/128       50
 #precedence  ::/0          40
