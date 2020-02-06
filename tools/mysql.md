@@ -19,3 +19,18 @@ mysql> show tables;
 ```
 mysql> show status where Variable_name = 'queries';
 ```
+
+# データベースの一覧
+```
+show database;
+```
+
+# データベースの選択
+```
+use hoge;
+```
+
+# 現在使用しているデータベースの確認
+```
+select database();
+```
