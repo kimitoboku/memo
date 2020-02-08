@@ -200,3 +200,12 @@ Taskでは以下のように書く
 特に，roleの再利用性を上げるには良い．
 
 Roleの中で設定しておけば，Playbook側の書き方に依存せずに実行出来る可能性が上がる．
+
+また， `become` と同時に `become_user` を設定する事で，実行するユーザも指定する事が出来る．
+```yml
+- name: Restart nsd service
+  command: nsd-control restart
+  become: yes
+  become_user: nsd
+```
+こちらは基本的なパーミッション設定さえそれぞれのtaskでしていればあまり使用する機会はないが，上記のように特定のユーザでのみ実行出来るようなコマンドがある場合に使用する．
