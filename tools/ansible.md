@@ -172,3 +172,31 @@ Ansibleはホスト毎にユーザが保存した情報などを `Custom Facts` 
   with_dict:
   when: item.key == "hoge"
 ```
+
+# 特権モードでの実行について
+Ansibleでは特権モードでの実行には `become` を使用する．
+[Understanding privilege escalation: become — Ansible Documentation](https://docs.ansible.com/ansible/latest/user_guide/become.html)
+
+使用する方法としては，Playbookに直接書くか，task毎に書いていくかのどちらかになる．
+
+Playbookでは以下のように書く
+```yml
+- hosts: test
+  become: yes
+  roles:
+    - nsd
+```
+
+Taskでは以下のように書く
+```yml
+- name: Restart nsd service
+  service:
+    name: nsd
+    state: restarted
+  become: yes
+```
+
+基本的にはtask単位で書いた方が良いらしい．
+特に，roleの再利用性を上げるには良い．
+
+Roleの中で設定しておけば，Playbook側の書き方に依存せずに実行出来る可能性が上がる．
