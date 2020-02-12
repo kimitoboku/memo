@@ -34,3 +34,8 @@ use hoge;
 ```
 select database();
 ```
+
+# 作成したテーブルと同様のテーブルを作成するためのCREATE TABLEを確認する
+```
+show create table hoges;
+```
