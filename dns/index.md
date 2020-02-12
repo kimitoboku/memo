@@ -3,10 +3,10 @@ layout: post
 title: DNS
 ---
 
-- [DNS](./dns/)
-- [PowerDNS](./pdns/)
-- [Designate](./designate/)
-- [NSD](./nsd/)
-- [Unbound](./unbound/)
-- [dnspython](./dnspython)
-- [Bind](./bind)
+- [DNS](./dns/index)
+- [PowerDNS](./pdns/index)
+- [Designate](./designate/index)
+- [NSD](./nsd/index)
+- [Unbound](./unbound/index)
+- [dnspython](./dnspython/index)
+- [Bind](./bind/index)
