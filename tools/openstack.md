@@ -71,3 +71,9 @@ deactivate_openstack () {
 ```
 openstack recordset create --type A --record '192.0.2.1' example.com. example.com.
 ```
+
+
+## ユーザに割り当てられたロールの確認
+```
+openstack role assignment list --user admin
+```
