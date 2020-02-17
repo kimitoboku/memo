@@ -214,9 +214,11 @@ Roleの中で設定しておけば，Playbook側の書き方に依存せずに�
 Ansibleで名前解決した結果を元にtemplateなどを使用したい場合がある．
 例えば，PromethuesのExpoterを配置したい時に，そのホストがPublic IPとPrivate IPアドレスを持っていて，Private IPアドレスだけでホストしたい場合などに使用する．
 
+{% raw %}
 ```
-\{\{ lookup('dig', ansible_host) \}\}
+{{ lookup('dig', ansible_host) }}
 ```
+{% endraw %}
 
 この `ansible_host` の部分は文字列でかまわない．
 自分の場合はアクセスする時のホスト名に対応したIPアドレスを入れたかったから，こんな感じに書いた．
