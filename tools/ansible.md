@@ -215,7 +215,7 @@ Ansibleで名前解決した結果を元にtemplateなどを使用したい場�
 例えば，PromethuesのExpoterを配置したい時に，そのホストがPublic IPとPrivate IPアドレスを持っていて，Private IPアドレスだけでホストしたい場合などに使用する．
 
 ```
-{{ lookup('dig', ansible_host) }}
+\{\{ lookup('dig', ansible_host) \}\}
 ```
 
 この `ansible_host` の部分は文字列でかまわない．
