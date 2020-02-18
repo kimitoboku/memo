@@ -225,3 +225,20 @@ Ansibleで名前解決した結果を元にtemplateなどを使用したい場�
 
 逆にPublic IPアドレスを書きたい場合などに，Publicなドメイン名から設定を入れてもよい．
 ただ，この機能を使用するには `dnspython` をインストールする必要がある．
+
+
+
+# ハンドラーをPlaybookの途中でエラーが発生しても実行する．
+
+インストールスクリプトなどだと初回の実行順序的に必ずエラーが発生してしまい，notifyした，handlerが実行されない事があります．
+その時に，Playbookの途中でエラーが発生した場合にも，notify先のhandlerを強制的に実行するオプションがあります．
+
+Playbookのhostの中に `force_handlers: True` と記述すれば何がなんでもhandlerを動かしてくれる．
+
+```
+- hosts: test
+  force_handlers: True
+  become: yes
+  roles:
+    - nsd
+```
