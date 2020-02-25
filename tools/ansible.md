@@ -242,3 +242,15 @@ Playbookのhostの中に `force_handlers: True` と記述すれば何がなん�
   roles:
     - nsd
 ```
+
+
+# PlaybookからPlaybookを呼び出す
+複数のホストなどがある場合に，後から特定のホストに対してタスクを実行させたい場合などを考えると便利．
+全部のPlaybookを実行する `site.yml` などの中で `import_playbook` を使用して他のPlaybookを読みだし，，それぞれのPlaybookでホストやグループ，まとまり事にタスクを作っていく．
+後から，特定のグループを追加する時や，使用しなくなった，playbookを削除していくのにも，分かりやすくて便利．
+
+```yml:site.yml
+- import_playbook: nsd.yml
+- import_playbook: unbound.yml
+- import_playbook: node_exporter.yml
+```
