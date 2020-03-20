@@ -8,6 +8,7 @@ title: Home
 
 ## Language
 - [Python](./python)
+- [Golang](./golang)
 
 ## Linux
 - [openSUSE](./opensuse)
