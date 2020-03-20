@@ -20,7 +20,7 @@ title: Home
 - [one liners](./linux/one-liner)
 - [/etc](./linux/etc)
 - [bpftrace](./linux/bpftrace)
-- [bpftrace](./linux/docker)
+- [Docker](./linux/docker)
 
 ## Tools
 - [tmux](./tools/tmux)
