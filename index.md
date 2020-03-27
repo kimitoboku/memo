@@ -8,6 +8,7 @@ title: Home
 
 ## Language
 - [Python](./python)
+- [Golang](./golang)
 
 ## Linux
 - [openSUSE](./opensuse)
@@ -19,6 +20,7 @@ title: Home
 - [one liners](./linux/one-liner)
 - [/etc](./linux/etc)
 - [bpftrace](./linux/bpftrace)
+- [Docker](./linux/docker)
 
 ## Tools
 - [tmux](./tools/tmux)
