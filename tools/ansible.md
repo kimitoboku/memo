@@ -270,7 +270,7 @@ Playbookのhostの中に `force_handlers: True` と記述すれば何がなん�
   become: yes
   serial:
     - 1
-    - 100%
+    - "100%"
   roles:
     - hogehoge
 ```
