@@ -309,3 +309,20 @@ skipping: [hogehoge] => (item={'key': 'example.com'})  => {
 }
 
 ```
+
+# 一部のタスクだけローカルホストで実行したい時
+Ansibleでホストを対象にroleなどを実行している場合に一部のタスクをローカルで実行したい時がある．
+例えば，OpenStack関係のmoduleを実行したい場合などは，リモートホストにopenstacksdkなどのインストールを極力行いたくない．
+そのような場合には，タスクに `delegate_to: localhost` を追加する事で，一部のタスクをローカルホストで実行する事が出来る．
+また，同じ実行roleの中に居るので，その中で実行されたregisterなどはリモートホストで実行中もそのまま実行する事が出来る．
+
+```yaml
+- name: get server info
+  os_server_info:
+    cloud: mycloud
+    server: "{{ inventory_hostname }}"
+  register: result
+  delegate_to: localhost
+- debug:
+    msg: "{{ result.openstack_servers[0].id }}"
+```
