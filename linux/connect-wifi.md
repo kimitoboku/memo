@@ -17,4 +17,14 @@ $ nmcli device wifi connect SSID password 'PASSWORD' ifname wlan0
 ```
 これで，CLIからWiFiに接続が完了する．
 
+Wifiからの接続を解除．
+```
+$ nmcli device disconnect wlan0
+```
+
+SSIDの設定を削除(次回から自動で接続されてしまうのを防ぐため)
+```
+$ nmcli connection delete SSID
+```
+
 たまに，外で使おうとすると忘れるのでメモ．
