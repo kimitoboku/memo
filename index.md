@@ -21,6 +21,8 @@ title: Home
 - [/etc](./linux/etc)
 - [bpftrace](./linux/bpftrace)
 - [Docker](./linux/docker)
+- [iproute2](./linux/iproute2)
+- [nmcliを用いてwifiに接続](./linux/connect-wifi)
 
 ## Tools
 - [tmux](./tools/tmux)
