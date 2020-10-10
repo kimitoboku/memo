@@ -27,11 +27,12 @@ title: Home
 - [tcpdump](./tools/tcpdump)
 - [sipcalc](./tools/sipcalc)
 - [ansible](./tools/ansible)
+- [vagrant](./tools/vagrant)
 - [openstack](./tools/openstack)
 - [mysql](./tools/mysql)
 - [rgxg](./tools/rgxg)
 
-
 ## My Tools
 - [gelworm](./my_tools/gelworm)
 - [eleking](./my_tools/eleking)
+
