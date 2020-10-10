@@ -42,14 +42,18 @@ $ sysctl -w net.ipv4.tcp_syncookies=1 >> /etc/sysctl.conf
 
 ## よく使うパラメータ
 
-| パラメータ                        | 説明                                                                         |
-|-----------------------------------|------------------------------------------------------------------------------|
-| `fs.file-max`                     | ファイルディスクリプタの最大数                                               |
-| `vm.swappiness`                   | メモリのスワップをどの程度の頻度で行うか。 値が高いほど高頻度で行うらしい    |
-| `net.ipv4.tcp_fin_timeout `       | TCPのFINメッセージ受信からtimeoutまでの時間                                  |
-| `net.ipv4.conf.default.rp_filter` | 入力インターフェースを出力インターフェースが異なるパケットを破棄するかどうか |
-| `kernel.panic`                    | カーネルパニック後に再起動するかどうか                                       |
-| `net.ipv4.ip_local_port_range`    | TCPの受信ポートのレンジ                                                      |
+| パラメータ                               | 説明                                                                                                          |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `fs.file-max`                            | ファイルディスクリプタの最大数                                                                                |
+| `vm.swappiness`                          | メモリのスワップをどの程度の頻度で行うか。 値が高いほど高頻度で行うらしい                                     |
+| `net.ipv4.tcp_fin_timeout `              | TCPのFINメッセージ受信からtimeoutまでの時間                                                                   |
+| `net.ipv4.conf.default.rp_filter`        | 入力インターフェースを出力インターフェースが異なるパケットを破棄するかどうか                                  |
+| `kernel.panic`                           | カーネルパニック後に再起動するかどうか                                                                        |
+| `net.ipv4.ip_local_port_range`           | TCPの受信ポートのレンジ                                                                                       |
+| `net.ipv4.fib_multipath_hash_policy`     | 5 tupleを用いたPer Flow ECMPを有効にする                                                                      |
+| `net.ipv4.conf.{interface}.arp_ignore`   | ARPを受信したインターフェース以外のARPに応答を返さない(通常はいずれかのInterfaceがアドレスをもっていれば返す) |
+| `net.ipv4.conf.{interface}.arp_proxy`    | ネットワーク的に到達可能性がある場合にARPの応答を返す                                                         |
+
 
 
 
