@@ -33,6 +33,7 @@ title: Home
 - [openstack](./tools/openstack)
 - [mysql](./tools/mysql)
 - [rgxg](./tools/rgxg)
+- [docker-compose](./tools/docker-compose)
 
 ## My Tools
 - [gelworm](./my_tools/gelworm)
