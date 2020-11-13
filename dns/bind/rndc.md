@@ -35,7 +35,12 @@ uptimeだとかquerylogの有効無効が確認出来る．
 # rndc flush
 サーバのキャッシュを統べて削除する．
 
-# rndc stats
+# rndc flushname $LABEL
+`$LABEL` にmatchするcacheの削除を行う。
+あくまでもラベルにmatchする物だけなので `www.$LABEL` といったレコードのCacheの削除は出来ない。
+`unbound-control flush_zone $LABLE` とは挙動が違うので注意(`unbound-control` の場合はゾーン単位なので以下のCacheも削除される)
+
+# rndc stas
 サーバの統計情報をファイルに出力する．
 標準出力に出してくれればもっと使いやすかったのに．
 デフォルトでは `/lvar/named/` 以下に 出力される．
