@@ -38,7 +38,10 @@ uptimeだとかquerylogの有効無効が確認出来る．
 # rndc flushname $LABEL
 `$LABEL` にmatchするcacheの削除を行う。
 あくまでもラベルにmatchする物だけなので `www.$LABEL` といったレコードのCacheの削除は出来ない。
-`unbound-control flush_zone $LABLE` とは挙動が違うので注意(`unbound-control` の場合はゾーン単位なので以下のCacheも削除される)
+
+# rnc flushtree $ZONE
+`$ZONE` 以下のCacheを削除する。
+`unbound-control flush_zone $LABLE` と同じ挙動
 
 # rndc stas
 サーバの統計情報をファイルに出力する．
