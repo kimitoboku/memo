@@ -118,6 +118,36 @@ if __name__ == "__main__":
 Custom Moduleは基本的にターケットとなった環境で実行されるのでライブラリの確認とかは十全にやらないといけない．
 
 
+# AnsibleのOpenStackのインターフェースに併せたOpenStack系のモジュールの作り方
+`openstack_full_argument_spec` を用いるとAnsibleのdefaultのOpenStack関係のモジュールと同様のインターフェースでモジュールを作成する事が出来る。
+利用方法としては以下になる。
+```
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.openstack import (
+    openstack_full_argument_spec,
+    openstack_module_kwargs,
+    openstack_cloud_from_module,
+)
+
+def main():
+  argument_spec = openstack_full_argument_spec(
+    port_id=dict(required=True),
+    bgp_prefix_rules=dict(required=True, type="list"),
+    bgp_as_number=dict(required=True, type="int"),
+    bgp_local_as_number=dict(required=True, type="int"),
+  )
+  module_kwargs = openstack_module_kwargs()
+  module = AnsibleModule(
+    argument_spec, supports_check_mode=True, **module_kwargs
+  )
+  sdk, cloud = openstack_cloud_from_module(module)
+  os_network = cloud.get_session_endpoint("network")
+  os_token = cloud.auth_token
+```
+このサンプルは入力からopenstacksdkのcloudを取得して、NeutronのEndpontをOpenStackのアクセストークンを取得している。
+OpenStackのKeystoneに取得されているEndpointから取得出来るので便利。
+
+
 # 先に実行されたタスクの実行結果がchangedの時にのみ実行する
 Ansibleを書いてて， `shell` とかを使う時に実行するスクリプトファイルとかを `template` で生成した場合に，変更があった時だけ実行したいといった事が考えられる．
 そのような場合には， `register` と `when` を使って実行結果を確認する．
