@@ -131,10 +131,6 @@ from ansible.module_utils.openstack import (
 
 def main():
   argument_spec = openstack_full_argument_spec(
-    port_id=dict(required=True),
-    bgp_prefix_rules=dict(required=True, type="list"),
-    bgp_as_number=dict(required=True, type="int"),
-    bgp_local_as_number=dict(required=True, type="int"),
   )
   module_kwargs = openstack_module_kwargs()
   module = AnsibleModule(
