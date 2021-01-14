@@ -131,11 +131,14 @@ from ansible.module_utils.openstack import (
 
 def main():
   argument_spec = openstack_full_argument_spec(
+    port_id=dict(required=True),
   )
   module_kwargs = openstack_module_kwargs()
   module = AnsibleModule(
     argument_spec, supports_check_mode=True, **module_kwargs
   )
+
+  port_id = module.params["port_id"]
   sdk, cloud = openstack_cloud_from_module(module)
   os_network = cloud.get_session_endpoint("network")
   os_token = cloud.auth_token
