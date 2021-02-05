@@ -355,3 +355,15 @@ Ansibleでホストを対象にroleなどを実行している場合に一部の
 - debug:
     msg: "{{ result.openstack_servers[0].id }}"
 ```
+
+# 特定のGroupからホストをランダムに選択して実行
+Playbookのhostsの指定でもjinja2テンプレートを利用出来る。
+なので、この部分でシャッフルしてn個取得したら、ランダムにn個のホストに対して実行出来る。
+例えば、 `some_group_name` からシャッフルして4つのホストで実行する場合は以下のようになる。
+```yaml
+- hosts: "{{(groups['some_group_name'] | shuffle)[0:4]}}"
+  become: yes
+  roles:
+    - role: randm_exec_role
+      tags: randm_exec_role
+```
