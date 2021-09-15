@@ -33,6 +33,7 @@ title: Home
 - [openstack](./tools/openstack)
 - [mysql](./tools/mysql)
 - [rgxg](./tools/rgxg)
+- [envsubst](./tools/envsubst)
 - [docker-compose](./tools/docker-compose)
 
 ## My Tools
