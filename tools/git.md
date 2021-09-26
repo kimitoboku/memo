@@ -35,3 +35,29 @@ tigでも `-G` が使えるので便利。
 ```
 tig -G'regex'
 ```
+
+## プロジェクトを検索
+git grepを使えば、gitの管理対象のみを検索する事が出来る。
+```
+git grep "hoge"
+```
+
+defaultでは行番号がないので表示も出来る。
+```
+git grep -n "hoge"
+```
+
+また、特定のフォルダを対象にして検索も出来る。またフォルダ名に `:!` を除外して検索出来る。
+```
+git grep "hoge" -- tools/
+git grep "hoge" -- :!tools/
+```
+
+また、特定のコミットでの検索も出来る。
+```
+git grep "git" 905c31761aae388b691ea72de8c2ec37704e05f7
+```
+
+
+
+
