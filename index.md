@@ -35,6 +35,7 @@ title: Home
 - [rgxg](./tools/rgxg)
 - [envsubst](./tools/envsubst)
 - [docker-compose](./tools/docker-compose)
+- [git](./tools/git)
 
 ## My Tools
 - [gelworm](./my_tools/gelworm)
