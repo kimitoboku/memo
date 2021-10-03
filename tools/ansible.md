@@ -369,3 +369,18 @@ Playbookのhostsの指定でもjinja2テンプレートを利用出来る。
       tags: randm_exec_role
 ```
 {% endraw %}
+
+
+# Ansibleが実行されるホストの一覧を表示
+Playbookを実行する前に対象のホストを確認して、安全かどうかを確認したいと思う事が多々ある。
+Ansibleではこの確認は `--list-hosts` オプションで行う事が出来る。
+```
+$ ansible-playbook -i inventories/hogehoge hoge_playbook.yml --list-hosts
+```
+
+# Ansibleで実行されるタスクの確認
+Playbookでtagの指定だとか、リミットなどをした時にどのようなタスクが実行されるのか確認したい事がある。
+Ansibleではこの確認は `--list-tasks` オプションで行う事が出来る。
+```
+$ ansible-playbook -i inventories/hogehoge hoge_playbook.yml --list-tasks
+```
