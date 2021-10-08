@@ -384,3 +384,22 @@ Ansibleではこの確認は `--list-tasks` オプションで行う事が出来
 ```
 $ ansible-playbook -i inventories/hogehoge hoge_playbook.yml --list-tasks
 ```
+
+# 巨大なファイルやテンプレートを展開した場合にdiffが表示されない問題
+Ansibleを用いてjinja2のtemplateを展開するといった処理は多くのユーザが行っている。
+また、多くのユーザがAnsible Playbookの実行前に `--check --diff` modeでPlaybookの動作確認を行う。
+しかし、この時に、テンプレートの展開時のファイルサイズが大きすぎた場合に、Ansibleはdiffの表示を行ってくれずに以下のようなエラーを発生させる。
+```
+diff skipped: destination file size is greater than 104448
+diff skipped: source file size is greater than 104448
+```
+これは、Ansibleの `max_diff_size` という変数のdefault値に起因する。
+ファイルが `max_diff_size` byte 大きい場合に、AnsibleはDiffの表示を行わない。
+この設定は環境変数や `ansible.cfg` で変更が出来る。
+自分は多くの場合は以下のように、 `ansbile.cfg` で設定を行っている。
+```
+[defaults]
+max_diff_size = 1044480
+```
+`max_diff_size` の値は自分の環境により変更しよう。
+また、超巨大なfileのdiffはdiffが小さい場合は問題ないが、初回の展開時などは膨大になるので、注意した方が良い。
