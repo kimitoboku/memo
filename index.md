@@ -23,6 +23,7 @@ title: Home
 - [Docker](./linux/docker)
 - [iproute2](./linux/iproute2)
 - [nmcliを用いてwifiに接続](./linux/connect-wifi)
+- [KVMまわりの付き方](./linux/kvm)
 
 ## Tools
 - [tmux](./tools/tmux)
