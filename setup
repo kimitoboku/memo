@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -xue
+cd $HOME
+git clone https://github.com/kimitoboku/dotfiles .dotfiles
+cd .dotfiles
+./setup
