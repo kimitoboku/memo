@@ -422,12 +422,16 @@ max_diff_size = 1044480
 
 ## 変数から `yaml` や `json` に変換して設定ファイルを生成する
 Ansibleは以下のようにする事で、ansibleの変数からyamlなどのフォーマットを生成する事が出来る。
+
+{% raw %}
 ```
 - name: Copy using inline content
   copy:
     content: "{{ hogehoge | to_yaml }}"
     dest: /etc/hoge/conf.yaml
 ```
+{% endraw %}
+
 `hogehoge` はAnsibleの変数として構造化されたデータで、Ansibleの変数として設定した値をそのまま設定ファイルに起こすことが出来る。
 ただ、この方法は個人的にはあまり推奨されない。
 以下の理由によりAnsible Playbookの管理を難しくなってしまいます。
