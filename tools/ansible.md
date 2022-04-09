@@ -26,6 +26,15 @@ $ ansible-playbook playbook.yml --step
 $ ansible-playbook playbook.yml --start-at="Task Name"
 ```
 
+実行されるホストを確認する `--list-hosts` オプション
+```
+$ ansible-playbook playbook.yml --list-hosts
+```
+
+実行されるタスクを確認する `--list-tasks` オプション
+```
+$ ansible-playbook playbook.yml --list-tasks
+```
 
 # Ansible Custom Moduleの作りかた
 Ansibleを書いてて，宣言的にPlaybookとかRoleを作れないと分かったら，諦めて，Custom Moduleを書いた方がてっとり早いと思う．
