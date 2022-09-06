@@ -39,3 +39,8 @@ select database();
 ```
 show create table hoges;
 ```
+
+# DBのACLの確認
+```
+select user, host from mysql.user;
+```
