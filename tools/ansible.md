@@ -418,6 +418,42 @@ max_diff_size = 1044480
 また、超巨大なfileのdiffはdiffが小さい場合は問題ないが、初回の展開時などは膨大になるので、注意した方が良い。
 
 
+# 同じgroup_varsとかを使ったまま実行対象を変更させたい時
+
+開発環境構築用のAnsible-Playbookなどで、設定とかはそのままで良いんだけど、対象となるデプロイ先したいという事がある。
+例えば、NginxのNode数を減らして、別のWorker Nodeを増やしたい場合だとか、全ての開発環境をデプロイするのは時間がかかるので必要な開発環境のみをデプロイしたい場合などがある。
+この時に、inventoryのフォルダを増やしていくと、例えば変数の修正や変更などがある場合に、変更対象が開発環境という1つの事に対してどんどん増えて行く。
+このような場合には、1つのinventoryのフォルダの中に複数のhostsファイルを用意するのが良い。
+
+
+例えば、以下のようにhosts fileが `aaa.yaml` と `bbb.yaml` の2つ用意する。
+
+```
+$ tree .
+.
+├── inventories
+│   └── hoge
+│       ├── aaa.yaml
+│       ├── bbb.yaml
+│       └── group_vars
+│           └── all
+│               └── vars.yaml
+└── test.yaml
+
+4 directories, 4 files
+```
+
+この2つのhostsファイルからはそれぞれgroup_varsの内容などは利用する事が出来る。
+実行については、 `-i` オプションでホストファイルまでのpathを指定すれば動作してくれる。
+
+```
+$ ansible-playbook -i inventories/hoge/aaa.yaml test.yaml
+```
+
+サービスのデプロイなどに使うには少し、良くない設定ではあるが。
+開発環境のためのinventoryであれば、このような使い方をしても問題無いと思う。
+
+
 # Ansibleでやめた方が良いこと
 
 ## 変数から `yaml` や `json` に変換して設定ファイルを生成する
