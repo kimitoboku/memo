@@ -1,7 +1,9 @@
 theme: minima
 title: きみとぼくとめもと
-author: kimitoboku
-email: kimitoboku@techack.net
+author:
+  name: Kento KAWAKAMi
+  email: kimitoboku@techack.net
+github: kimitoboku
 description: なんか適当にメモとかまとめる予定です。自分用なので適当です。
 logo: ./img/c3764192d3079398321efb22ccb65c35.jpg
 
