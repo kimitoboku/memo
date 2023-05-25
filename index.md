@@ -5,6 +5,7 @@ title: Home
 
 ## Networking
 - [DNS](./dns)
+- [HTTP](./HTTP)
 
 ## Language
 - [Python](./python)
