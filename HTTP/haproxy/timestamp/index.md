@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HAproxyが記録するtimestamp
+title: HAProxyがログに記録するtimestampの種類と記録する時刻について
 ---
 
 HAPRoxyのlog formatではtimestampとして利用出来る変数が複数存在する。
