@@ -453,6 +453,14 @@ $ ansible-playbook -i inventories/hoge/aaa.yaml test.yaml
 サービスのデプロイなどに使うには少し、良くない設定ではあるが。
 開発環境のためのinventoryであれば、このような使い方をしても問題無いと思う。
 
+# Ansibleの `ansible_default_ipv4` が何の値を返すのかという事について。
+`ansible_default_ipv4` は複数のNICや複数のIPアドレスを持つ環境だと、期待した値ではないIPアドレスが設定される事がある。
+では、実際にには何の値が設定されるのかというと、多くの場合にLinuxでdefault経路時にsrc ip addressとして設定された値が利用される。
+より具体的にはIPv4では 8.8.8.8 (Google Public DNS)への通信に利用されるIPアドレスが `ansible_default_ipv4` として利用される。
+`ansible_default_ipv4` の `default` は default routeの事だと思ってAnsibleを書くとミスが少なくなるかもしれない。
+
+参考ソースコード
+- [ansible/lib/ansible/module_utils/facts/network/linux.py at 3ec0850df9429f4b1abc78d9ba505df12d7dd1db · ansible/ansible](https://github.com/ansible/ansible/blob/3ec0850df9429f4b1abc78d9ba505df12d7dd1db/lib/ansible/module_utils/facts/network/linux.py#L102-L135)
 
 # Ansibleでやめた方が良いこと
 
